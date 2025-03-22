@@ -4,6 +4,8 @@ document // makes it so you can press enter to submit as opposed to just being a
         if (event.key === "Enter") {
             event.preventDefault();
             document.getElementById("searchButton").click();
+            var frame = document.getElementById("iframeWindow")
+            frame.style.visibility = "visible";
         }
     });
 

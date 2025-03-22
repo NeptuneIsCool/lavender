@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background: #0f0b12;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.title {
+  color: rgb(240, 203, 255);
+  font-size: 90px;
+  margin: 0px;
+  animation: transitionIn 0.7s ease-out forwards;
+
+}
+.motto {
+  opacity: 0;
+  color: rgb(240, 203, 255);
+  font-size: 20px;
+  animation: transitionIn 0.6s 0.2s ease-out forwards;
+
+}
+.searchbar {
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  animation: ghostin 0.6s 0.3s ease-out forwards;
+}
+
+.iframeWindow {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+#urlInput {
+  padding-left: 35px;
+  padding-right: 35px;
+  background: none;
+  font-family: inherit;
+  height: 50px;
+  border: 1.5px solid rgba(243, 221, 255, 0.87);
+  color: var(--text-color);
+  border-radius: 3px;
+  outline: none;
+  width: 350px;
+  margin-top: 5px;
+  border-radius: 20px;
+  color: #f1c2ff;
+  transition: border-radius 0.4s;
+}
+.fa-magnifying-glass {
+  position: absolute;
+  margin-top: 24px;
+  margin-left: 10px;
+  color: #f1c2ff;
+  font-size: 15px;
+
+}
+.urlInput .fa-magnifying-glass {
+  color: #f1c2ff;
+}
+#urlInput:focus {
+  border: 1px solid rgb(239, 211, 255);
+  border-radius: 6px;
+  border-width: 2px;
+}
+
+#urlInput::placeholder {
+  color: #f7deff8f;
+}
+#searchButton {
+  position: absolute;
+  visibility: hidden;
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+
+
+  }
+}
+@keyframes ghostin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
