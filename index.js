@@ -2,7 +2,6 @@ import express from 'express';
 import http from 'node:http';
 import { createBareServer } from '@tomphttp/bare-server-node';
 import cors from 'cors';
-import path from "path";
 import { hostname } from "node:os"
 
 const server = http.createServer();
@@ -31,23 +30,7 @@ server.on('upgrade', (req, socket, head) => {
     }
 })
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/public/index.html'));
-});
-
-app.get('/index', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/public/index.html'));
-});
-
-/* add your own extra urls like this:
-
-app.get('/pathOnYourSite', (req, res) => {
-    res.sendFile(path.join(process.cwd(), '/linkToItInYourSource'));
-});
-
-*/
-
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 server.on('listening', () => {
     const address = server.address();
 
